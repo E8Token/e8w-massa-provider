@@ -1,0 +1,36 @@
+{
+  "name": "e8w-massa-provider",
+  "version": "1.0.0",
+  "description": "Implementation of Energy8 web3 wallet to access the massа chain",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/E8Token/e8w-massa-provider"
+  },
+  "keywords": [
+    "energy8",
+    "wallet",
+    "provider",
+    "massa",
+    "blockchain"
+  ],
+  "author": "E8Token",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/E8Token/e8w-massa-provider/issues"
+  },
+  "homepage": "https://github.com/E8Token/e8w-massa-provider#readme",
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.2"
+  }
+}
