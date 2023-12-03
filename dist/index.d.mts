@@ -47,6 +47,6 @@ interface ITransactionDetails {
     operationId: string;
 }
 
-declare const web3: IMassaProvider;
+declare const web3: Promise<IMassaProvider>;
 
 export { web3 };
