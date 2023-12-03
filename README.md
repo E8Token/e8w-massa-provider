@@ -2,12 +2,16 @@
 
 ### Implementation of Energy8 web3 wallet to access the massа chain
 
-`e8w-massa-provider` is a TypeScript library to easily connect frontend applications with browser energy8 wallet extension and massa blockchain.
+`@energy8/massa-provider` is a TypeScript library to easily connect frontend applications with browser energy8 wallet extension and massa blockchain.
 
 ## Installation
 
 ```sh
 npm install @energy8/massa-provider
+```
+or
+```sh
+yarn add @energy8/massa-provider
 ```
 
 ## Usage
@@ -15,6 +19,10 @@ npm install @energy8/massa-provider
 import (this script works only in the browser!)
 ```javascript
 import { web3 } from '@energy8/massa-provider';
+
+(async () => {
+    const Web3 = await web3
+})()
 ```
 
 <table>
@@ -26,6 +34,21 @@ import { web3 } from '@energy8/massa-provider';
 </tr>
 </thead>
 <tbody>
+
+<tr>
+<td><code>web3</code></td>
+<td>
+</td>
+
+<td>
+<div>
+
+```Promise<IMassaProvider>```
+
+</div>
+</td>
+
+</tr>
 
 <tr>
 <td><code>wallet.connect</code></td>
@@ -255,28 +278,29 @@ maxGas:
 import {web3} from '@energy8/massa-provider'
 
 (async () => {
-    await web3.wallet.connect()
+    const Web3 = await web3
+    await Web3.wallet.connect()
 
-    console.log('connected', web3.wallet.connected)
+    console.log('connected', Web3.wallet.connected)
 
     //base58 address string
-    console.log('connected', web3.wallet.account.address())
+    console.log('connected', Web3.wallet.account.address())
 
     /**
      * {finalBalance: string, candidateBalance: string}
      */
-    console.log('balance', web3.wallet.account.balance())
+    console.log('balance', Web3.wallet.account.balance())
 
     /**
      * state locked/unlocked wallet extension
      */
-    console.log('unlocked', web3.wallet.unlocked)
+    console.log('unlocked', Web3.wallet.unlocked)
 
     /**
      * returned ITransactionDetails
      * {operationId: string}
      */
-    console.log('unlocked', web3.wallet.account.buyRolls(
+    console.log('unlocked', Web3.wallet.account.buyRolls(
         10n,
         10n,
     ))
@@ -285,7 +309,7 @@ import {web3} from '@energy8/massa-provider'
      * returned ITransactionDetails
      * {operationId: string}
      */
-    console.log('execSC', web3.contract.execSmartContract(
+    console.log('execSC', Web3.contract.execSmartContract(
         'AU166n9NvYrSGfMoXAPnwD4hXyLzZchJHj1TUkWwBEae8L3X8MwB',
         'someFunctionName',
         new Uint8Array([4,   0,   0,   0, 116, 101, 115, 116]),

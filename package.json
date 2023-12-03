@@ -1,6 +1,6 @@
 {
   "name": "@energy8/massa-provider",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Implementation of Energy8 web3 wallet to access the massа chain",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
