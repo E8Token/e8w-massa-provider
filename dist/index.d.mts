@@ -15,6 +15,13 @@ interface IMassaProvider {
 }
 
 /**
+ * Request for an AccountBalance command.
+ */
+interface IAccountBalanceRequest {
+    /** Account address */
+    address: string;
+}
+/**
  * Response from an AccountBalance command.
  */
 interface IAccountBalanceResponse {
@@ -24,6 +31,24 @@ interface IAccountBalanceResponse {
     candidateBalance: string;
 }
 
+/**
+ * Payload for a signing operation request sent to the content script.
+ */
+interface IAccountSignRequest {
+    /** Account's unique address */
+    address: string;
+    /** Data to be signed, represented as a Uint8Array */
+    data: Uint8Array;
+}
+/**
+ * Response from the content script after a signing operation.
+ */
+interface IAccountSignResponse {
+    /** Public key of the account */
+    publicKey: string;
+    /** Signed message data */
+    signature: string;
+}
 /**
  * Output produced by the sign() method.
  */
@@ -49,4 +74,4 @@ interface ITransactionDetails {
 
 declare const web3: Promise<IMassaProvider>;
 
-export { web3 };
+export { type IAccount, type IAccountBalanceRequest, type IAccountBalanceResponse, type IAccountSignOutput, type IAccountSignRequest, type IAccountSignResponse, type IMassaContractInterface, type IMassaProvider, type IMassaWalletInterface, type ITransactionDetails, web3 };

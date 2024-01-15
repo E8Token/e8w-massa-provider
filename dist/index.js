@@ -43,6 +43,8 @@ __export(src_exports, {
   web3: () => web3
 });
 module.exports = __toCommonJS(src_exports);
+
+// src/web3.ts
 var make = () => {
   return new Promise((resolve, reject) => {
     window.addEventListener(

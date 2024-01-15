@@ -19,7 +19,7 @@ var __async = (__this, __arguments, generator) => {
   });
 };
 
-// src/index.ts
+// src/web3.ts
 var make = () => {
   return new Promise((resolve, reject) => {
     window.addEventListener(
